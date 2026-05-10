@@ -14,3 +14,18 @@ Bases para trabajar:
 - products
 
 ![Diagrama ER](assets/foodtrucks_db.png)
+
+## Estructura de la base de datos
+
+La base de datos `DBEAVER` está compuesta por cinco tablas que modelan las operaciones de una red de foodtrucks.
+
+### `foodtrucks`
+
+Tabla central del esquema. Registra cada foodtruck activo en la plataforma.
+
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `foodtruck_id` | INT (PK) | Identificador único del foodtruck |
+| `name` | NVARCHAR(100) | Nombre comercial del foodtruck |
+| `cuisine_type` | NVARCHAR(100) | Tipo de cocina que ofrece (ej: mexicana, italiana) |
+| `city` | NVARCHAR(100) | Ciudad en la que opera |
