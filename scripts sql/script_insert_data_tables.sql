@@ -58,10 +58,19 @@ SELECT * FROM orders;
 -- ORDER_ITEMS
 -- INPUT de datos de forma manual
 
-INSERT INTO order_items (order_item_id,order_id,product_id,quantity)
+/*INSERT INTO order_items (order_item_id,order_id,product_id,quantity)
 VALUES 
 	(1,1001,101,1),
 	(2,1002,103,1),
-	(3,1002,104,1);
+	(3,1002,104,1); */
+
+BULK INSERT order_items
+FROM 'G:\Mi unidad\Data Science - Henry\Data Science - Henry\Modulo 2\Lectures\FoodTrucks\foodtrack-db\data\order_items.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	FIELDTERMINATOR = ',',
+	ROWTERMINATOR = '0x0a'
+);
 
 SELECT * FROM order_items;
