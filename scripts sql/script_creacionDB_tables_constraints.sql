@@ -69,3 +69,9 @@ REFERENCES products(product_id)
 
 );
 
+-- AGREGAR COLUMNA DE COMENTARIOS EN ORDENES
+
+ALTER TABLE orders
+ADD comentarios NVARCHAR(200);
+
+SELECT * FROM orders;
