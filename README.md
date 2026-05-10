@@ -13,3 +13,4 @@ Bases para trabajar:
 - orders
 - products
 
+![Diagrama ER](assets/foodtrucks-db.png)
