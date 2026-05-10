@@ -10,7 +10,7 @@ USE DBEAVER;
 
 -- TABLE: FOODTRUCKS
 CREATE TABLE foodtrucks (
-	foodtruck_id INT IDENTITY(1,1) PRIMARY KEY, --LLAVE PRIMARIA AUTOINCREMENTAL
+	foodtruck_id INT PRIMARY KEY, --LLAVE PRIMARIA AUTOINCREMENTAL
 	name NVARCHAR(100) NOT NULL,
 	cuisine_type NVARCHAR(100) NOT NULL,
 	city NVARCHAR(100) NOT NULL
@@ -18,7 +18,7 @@ CREATE TABLE foodtrucks (
 
 -- TABLE: LOCATIONS
 CREATE TABLE locations (
-	location_id INT IDENTITY(1,1) PRIMARY KEY,
+	location_id INT PRIMARY KEY,
 	foodtruck_id INT,
 	location_date DATE,
 	zone NVARCHAR(100) NOT NULL
@@ -30,7 +30,7 @@ REFERENCES foodtrucks(foodtruck_id)
 
 -- TABLE: PRODUCTS
 CREATE TABLE products (
-	product_id INT IDENTITY(1,1) PRIMARY KEY,
+	product_id INT PRIMARY KEY,
 	foodtruck_id INT,
 	name NVARCHAR(200) NOT NULL,
 	price DECIMAL,
@@ -43,7 +43,7 @@ REFERENCES foodtrucks(foodtruck_id)
 
 -- TABLE: ORDERS
 CREATE TABLE orders (
-	order_id INT IDENTITY(1001,1) PRIMARY KEY,
+	order_id INT PRIMARY KEY,
 	foodtruck_id INT,
 	order_date DATE,
 	status NVARCHAR(200) NOT NULL,
@@ -55,7 +55,7 @@ REFERENCES foodtrucks(foodtruck_id)
 
 -- TABLE: ORDERS
 CREATE TABLE order_items (
-	order_item_id INT IDENTITY(1,1) PRIMARY KEY,
+	order_item_id INT PRIMARY KEY,
 	order_id INT,
 	product_id INT,
 	quantity INT
@@ -68,3 +68,4 @@ CONSTRAINT FK_product_order_items FOREIGN KEY (product_id)
 REFERENCES products(product_id)
 
 );
+
